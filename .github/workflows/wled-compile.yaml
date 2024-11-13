@@ -31,7 +31,7 @@ jobs:
         npm install
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp01_1m_full' >>platformio.ini
-        echo 'build_flags = ${env:esp01_1m_full.build_flags} -D WLED_AP_SSID_UNIQUE -D WLED_DEBUG -D WLED_DEBUG_HOST='\''"192.168.1.214"'\'' -D WLED_DEBUG_IMPROV -D WLED_DISABLE_MQTT -D WLED_DISABLE_LOXONE -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D WLED_DISABLE_2D -D LEDPIN=2 -D BTNPIN=0 -D WLED_MAX_BUSSES=1 -D DEFAULT_LED_COUNT=26 -D DEFAULT_LED_TYPE=WS2805 -D CLIENT_SSID='\''"SFR_EDF02"'\'' -D CLIENT_PASS='\''"rtiochli7mencorymith"'\''' >>platformio.ini
+        echo 'build_flags = ${env:esp01_1m_full.build_flags} -D WLED_AP_SSID_UNIQUE -D WLED_DEBUG -D WLED_DEBUG_HOST='\''"192.168.1.214"'\'' -D WLED_DEBUG_IMPROV -D WLED_DISABLE_MQTT -D WLED_DISABLE_LOXONE -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D WLED_DISABLE_2D -D LEDPIN=2 -D BTNPIN=0 -D WLED_MAX_BUSSES=1 -D DEFAULT_LED_COUNT=26 -D DEFAULT_LED_TYPE=TYPE_WS2812_2CH_X3 -D CLIENT_SSID='\''"SFR_EDF02"'\'' -D CLIENT_PASS='\''"rtiochli7mencorymith"'\''' >>platformio.ini
         
         echo 'build_unflags= -D WLED_RELEASE_NAME' >>platformio.ini
         pio run -e custom_build || pio run -e custom_build
